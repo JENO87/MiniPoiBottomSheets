@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/scrollView_RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/miniPoiImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/POI_Info"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_below="@+id/miniPoiImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/poiInfoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunds Domkyrka"
+                android:paddingStart="10dp"
+                android:textSize="20sp"
+                android:paddingLeft="10dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/poiInfoTypeAndDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Place of Worship, 10 min"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:paddingLeft="10dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/poiInfoOpeningHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open now"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:paddingLeft="10dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/poi_info_scrollView_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/poi_info_directions_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Directions" />
+
+                    <Button
+                        android:id="@+id/poi_info_call_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Call" />
+
+                    <Button
+                        android:id="@+id/poi_info_save_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Save" />
+
+                    <Button
+                        android:id="@+id/poi_info_share_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Share" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLABLA"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
