@@ -27,11 +27,11 @@ class MiniPoiDialogFragment : BottomSheetDialogFragment() {
 
         _binding = MiniPoiModalBottomSheetBinding.inflate(inflater, container, false).apply {
 
-            context?.let {
+/*            context?.let {
                 Glide.with(it)
                     .load("https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F4f%2FLunds_domkyrka%25E2%2580%2593flygbild_06_september_2014.jpg&imgrefurl=https%3A%2F%2Fsv.wikipedia.org%2Fwiki%2FLunds_domkyrka&tbnid=eg1hBV2ThZ_CBM&vet=12ahUKEwjz7r6ag4rxAhXMzioKHemFAXsQMygAegUIARCvAQ..i&docid=Ber0V9xoND0Y6M&w=3444&h=2394&q=lunds%20domkyrka&ved=2ahUKEwjz7r6ag4rxAhXMzioKHemFAXsQMygAegUIARCvAQ")
                     .into(miniPoiImage)
-            }
+            }*/
 
             poiInfoName.text = "Lunds Domkyrka"
             poiInfoTypeAndDistance.text = "Place of Worship, 10 min"

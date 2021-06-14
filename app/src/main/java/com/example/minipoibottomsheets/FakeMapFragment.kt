@@ -1,5 +1,6 @@
 package com.example.minipoibottomsheets
 
+import PageAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,25 +32,27 @@ class FakeMapFragment : Fragment() {
                 }
 
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
-                    when (newState) {
-                        BottomSheetBehavior.STATE_COLLAPSED -> Toast.makeText(context, "STATE_COLLAPSED", Toast.LENGTH_SHORT).show()
-                        BottomSheetBehavior.STATE_EXPANDED -> Toast.makeText(context, "STATE_EXPANDED", Toast.LENGTH_SHORT).show()
-                        BottomSheetBehavior.STATE_DRAGGING -> Toast.makeText(context, "STATE_DRAGGING", Toast.LENGTH_SHORT).show()
-                        BottomSheetBehavior.STATE_SETTLING -> Toast.makeText(context, "STATE_SETTLING", Toast.LENGTH_SHORT).show()
-                        BottomSheetBehavior.STATE_HIDDEN -> Toast.makeText(context, "STATE_HIDDEN", Toast.LENGTH_SHORT).show()
-                        else -> Toast.makeText(context, "OTHER_STATE", Toast.LENGTH_SHORT).show()
-                    }
                 }
             })
 
             btnBottomSheetPersistent.setOnClickListener {
-                if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED)
-                    bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-                else
-                    bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                when (bottomSheetBehavior.state) {
+                    BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+                    BottomSheetBehavior.STATE_HALF_EXPANDED -> bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                    BottomSheetBehavior.STATE_EXPANDED -> bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+                    else -> bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                }
             }
-        }
 
+
+            // PageAdapter stuff
+            val viewPager = poiViewpager
+            viewPager.adapter = PageAdapter(childFragmentManager)
+
+            val tabLayout = tabLayout
+            tabLayout.setupWithViewPager(viewPager)
+
+        }
 
         return binding.root
     }
