@@ -11,18 +11,18 @@ class PageAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment {
-        when(position) {
+        return when(position) {
             0 -> {
-                return poi_overview()
+                poi_overview()
             }
             1 -> {
-                return poi_wiki()
+                poi_wiki()
             }
             2 -> {
-                return poi_photos()
+                poi_photos()
             }
             else -> {
-                return poi_overview()
+                poi_overview()
             }
         }
     }
@@ -30,13 +30,13 @@ class PageAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence? {
         when(position) {
             0 -> {
-                return "Tab 1"
+                return "Overview"
             }
             1 -> {
-                return "Tab 2"
+                return "Wikipedia"
             }
             2 -> {
-                return "Tab 3"
+                return "Feed"
             }
         }
         return super.getPageTitle(position)

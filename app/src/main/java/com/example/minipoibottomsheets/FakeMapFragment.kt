@@ -37,7 +37,9 @@ class FakeMapFragment : Fragment() {
                 }
             })
 
-            btnBottomSheetPersistent.setOnClickListener {
+            btnBottomSheetPersistent.setOnClickListener { behavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED }
+
+            miniPoiSheet.setOnClickListener {
                 when (behavior.state) {
                     BottomSheetBehavior.STATE_COLLAPSED -> behavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
                     BottomSheetBehavior.STATE_HALF_EXPANDED -> behavior.state = BottomSheetBehavior.STATE_EXPANDED
@@ -45,7 +47,6 @@ class FakeMapFragment : Fragment() {
                     else -> behavior.state = BottomSheetBehavior.STATE_EXPANDED
                 }
             }
-
 
             // PageAdapter stuff
             val viewPager = poiViewpager
